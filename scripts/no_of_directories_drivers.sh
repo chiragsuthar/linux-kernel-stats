@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Obtains the number of directories in each version of linux kernel
+# Contributors: meetdheerajreddy@gmail.com, patelmadhu06@gmail.com
+
 SRCDIR_a=~/archive
 cd $SRCDIR_a
     #declaring an array containing all versions
@@ -18,7 +21,7 @@ cd $SRCDIR_a
         else
             paste <(echo "${all_versions[$i]}", "no drivers directory")
         fi
-    done >> /home/madhu/Desktop/Research_Work/linux-kernel-stats/data_dir/output_no_of_directories_drivers.txt
+    done >> ~/data_dir/output_no_of_directories_drivers.txt
 
 SRCDIR_a=~/erofs-utils
 cd $SRCDIR_a
@@ -39,7 +42,7 @@ cd $SRCDIR_a
         else
             paste <(echo "${all_versions[$i]}", "no drivers directory")
         fi
-    done >> /home/madhu/Desktop/Research_Work/linux-kernel-stats/data_dir/no_of_directories_drivers.txt
+    done >> ~/data_dir/output_no_of_directories_drivers.txt
 
 SRCDIR_a=~/kbd
 cd $SRCDIR_a
@@ -60,7 +63,7 @@ cd $SRCDIR_a
         else
             paste <(echo "${all_versions[$i]}", "no drivers directory")
         fi
-    done >> /home/madhu/Desktop/Research_Work/linux-kernel-stats/data_dir/no_of_directories_drivers.txt
+    done >> ~/data_dir/output_no_of_directories_drivers.txt
 
 SRCDIR_a=~/history
 cd $SRCDIR_a
@@ -81,9 +84,9 @@ cd $SRCDIR_a
         else
             paste <(echo "${all_versions[$i]}", "no drivers directory")
         fi
-    done >> /home/madhu/Desktop/Research_Work/linux-kernel-stats/data_dir/no_of_directories_drivers.txt
+    done >> ~/data_dir/output_no_of_directories_drivers.txt
 
-SRCDIR_a=~/linux-stable/linux-stable
+SRCDIR_a=~/linux-stable
 cd $SRCDIR_a
     #declaring an array containing all versions
     declare -a all_versions=($(git tag -l | sort -V))  
@@ -102,4 +105,4 @@ cd $SRCDIR_a
         else
             paste <(echo "${all_versions[$i]}", "no drivers directory")
         fi
-    done >>/home/madhu/Desktop/Research_Work/linux-kernel-stats/data_dir/no_of_directories_drivers.txt
+    done >> ~/data_dir/output_no_of_directories_drivers.txt
